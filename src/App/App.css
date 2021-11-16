@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.back{
+    background-image: url("https://mybigplunge.com/wp-content/uploads/2018/04/url-shortener-theplungedaily.jpg");
+    background-size:100% 100%;
+    background-attachment: fixed;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 15px;
+}
+
+.head{
+  font-size: 30px;
+  color: black;
+  text-align: center;
+}
+.bttn{
+  align-items: center;
+}
+label{
+  font-size:22px;
+}
+.message{
+  font-size: 20px;
+  color:green;
+}
+.error{
+  font-size: 20px;
+  color: red;
+}
+
+.logout{
+  color:red;
+  font-size:20px;
+  font-family: 'Times New Roman', Times, serif;
+  
+}
+ul{
+  float: right;
+  padding-bottom: 50px;
+}
