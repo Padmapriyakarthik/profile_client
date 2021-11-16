@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = 'https://profileserve.herokuapp.com';
 
 export const login = (email,password)=>{
     return axios
