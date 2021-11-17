@@ -60,7 +60,7 @@ export const Signup = ({history})=>{
                     name="firstname" 
                     id="fname"
                     className="form-control" 
-                    placeholder="Enter FirstName"
+                    placeholder="Enter your Name"
                     value = {user.name}
                     required
                     onChange={(e)=>{

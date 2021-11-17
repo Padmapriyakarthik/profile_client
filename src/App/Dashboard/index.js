@@ -66,14 +66,16 @@ export const Dashboard=({history})=>{
     
     return(
         <>
-        <ul className="nav ">
+        <ul className="nav p-1">
                <li className="nav-item">
                <button type="button" className="btn btn-link logout"  onClick={logout}>Logout</button>
                </li>
         </ul>
+
         <div className="container center " >
+        
         <form >
-        <h1 className="head">Profile</h1>
+        <h1 className="head p-5">Profile</h1>
         <div className="row">
             <div offset="col-6">
             <div className="row">
@@ -81,8 +83,8 @@ export const Dashboard=({history})=>{
                 <div className="col-6">{user.name}</div>
                 <div className="col-6"><label>Email</label></div>
                 <div className="col-6">{user.email}</div>
-                <div className="col-3 p-2"><label for="birthday">Birthday:</label></div>
-                <div className="col-3 p-2"><input 
+                <div className="col-6 p-2"><label for="birthday">Birthday:</label></div>
+                <div className="col-6 p-2"><input 
                     type="date" 
                     name="birthday" 
                     id="birthday"
@@ -94,8 +96,8 @@ export const Dashboard=({history})=>{
                         setUser((usr)=>({...usr, dob:e.target.value}))
                     }}
                     /></div>
-                <div className="col-3 p-2"><label>Age</label></div>
-                <div className="col-3 p-2">{age}</div>
+                <div className="col-6 p-2"><label>Age</label></div>
+                <div className="col-6 p-2">{age}</div>
                 <div className="col-6 p-2">
                     <label for="fname">Mobile No.</label></div>
                 <div className="col-6 p-2">
