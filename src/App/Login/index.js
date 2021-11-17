@@ -35,7 +35,7 @@ export const Login = ({history})=>{
                     setMessage(" ");
                     setcustomMessage(" ");
                     localStorage.setItem("auth_token",token);
-                    alert(message);
+                    setMessage(message);
                     history.push(`/Dashboard`)      
                 }
                 else
