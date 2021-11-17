@@ -130,7 +130,7 @@ export const Dashboard=({history})=>{
                     type="radio" 
                     name="Gender" 
                     id="female"
-                    
+                    checked={user.gender=="female"}
                     value ="female"
                     onChange={(e)=>{
                         setUser((usr)=>({...usr, gender:e.target.value}))
@@ -141,7 +141,7 @@ export const Dashboard=({history})=>{
                     type="radio" 
                     name="Gender" 
                     id="male"
-                    
+                    checked={user.gender=="male"}
                     value ="male"
                     onChange={(e)=>{
                         setUser((usr)=>({...usr, gender:e.target.value}))
