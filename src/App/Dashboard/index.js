@@ -9,7 +9,9 @@ export const Dashboard=({history})=>{
     let [user,setUser]=useState({name:"",email:"",mobile:"",dob:null,gender:""});
     const [age,setAge]=useState();
     const[loading,setloading]=useState(0)
-   
+    const [message,setMessage]=useState("");
+    const [successmessage,setSuccessMessage]=useState("");
+
     const getUserInfo=()=>{
       //  const {email}=user
      //   console.log(email);
@@ -36,23 +38,31 @@ export const Dashboard=({history})=>{
     }
 
     const update=()=>{
-        console.log("updated");
+       
+        setMessage("")
+        setSuccessMessage("")
         const {dob,gender,mobile}=user;
         if(dob){
             calculateAge(dob);
         }
-        updateuser(dob,gender,mobile,token).then((info)=>{
-            console.log(info);
-            user=info.data;
-            if(user.dob){
-                calculateAge(user.dob);
-            }
-           setUser(user);
-           setloading(1);
-        }).catch((error)=>{
-            console.log(error);
-        })
-        console.log(user);
+        if(isNaN(mobile)){
+            setMessage("not a valid mobilenumber");
+        }else{
+            setSuccessMessage("updated Successfully")
+            updateuser(dob,gender,mobile,token).then((info)=>{
+                console.log(info);
+                user=info.data;
+                if(user.dob){
+                    calculateAge(user.dob);
+                }
+               setUser(user);
+               setSuccessMessage("");
+               setloading(1);
+            }).catch((error)=>{
+                console.log(error);
+            })
+            
+        }  
     }
     const logout=()=>{
         localStorage.removeItem("auth_token");
@@ -139,12 +149,13 @@ export const Dashboard=({history})=>{
                     />
                 <label for="male">Male</label>  </div>
             </div>
-            <p className="error"></p>
+            <p className="error">{message}</p>
             <button 
             type="button"
             className="btn btn-primary"
             onClick={update}
             >Update</button>
+            <p className="message">{successmessage}</p>
             </div>
             </div>
             
